@@ -1,0 +1,18 @@
+# Created at 2026-09-16T19:35:17.041
+[AppClassLoader@6ed3ef1] warning javax.* types are not being woven because the weaver option '-Xset:weaveJavaxPackages=true' has not been specified
+
+# Created at 2026-09-16T19:35:17.364
+WARNING: An illegal reflective access operation has occurred
+
+# Created at 2026-09-16T19:35:17.364
+WARNING: Illegal reflective access by org.joor.Reflect (file:/C:/Users/vic93/.m2/repository/org/jooq/joor-java-8/0.9.10/joor-java-8-0.9.10.jar) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class)
+
+# Created at 2026-09-16T19:35:17.365
+WARNING: Please consider reporting this to the maintainers of org.joor.Reflect
+
+# Created at 2026-09-16T19:35:17.366
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+
+# Created at 2026-09-16T19:35:17.366
+WARNING: All illegal access operations will be denied in a future release
+
