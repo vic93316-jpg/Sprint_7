@@ -1,5 +1,5 @@
-import all_models.Url;
-import creating_all.CreatingOrder;
+import all.models.Url;
+import creating.all.CreatingOrder;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
@@ -21,6 +21,7 @@ public class OrderListTest {
         Url.init();
         creatingOrder = new CreatingOrder();
     }
+
 
     @Test
     @DisplayName("В тело ответа возвращается список заказов")

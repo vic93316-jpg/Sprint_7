@@ -1,9 +1,9 @@
-import all_models.Url;
-import creating_all.CreatingOrder;
+import all.models.Url;
+import creating.all.CreatingOrder;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import all_models.Order;
+import all.models.Order;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,6 +36,7 @@ public class CreatingOrderTest {
                 {List.of()}
         });
     }
+
 
     @Before
     @Step("Подготовка: инициализация окружения для создания заказа")

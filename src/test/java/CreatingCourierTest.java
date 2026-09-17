@@ -1,5 +1,5 @@
-import all_models.Courier;
-import creating_all.CreatingCourier;
+import all.models.Courier;
+import creating.all.CreatingCourier;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -8,13 +8,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static all_models.Url.BASE_URL;
+import static all.models.Url.BASE_URL;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 public class CreatingCourierTest {
     private CreatingCourier creatingCourier;
     private Courier courier;
-    private int courierId = -1;
+
 
     @Before
     public void setUp() {
@@ -27,6 +27,7 @@ public class CreatingCourierTest {
 
     @After
     public void tearDown() {
+        int courierId = creatingCourier.getCourierId(courier);
         if (courierId != -1) {
             creatingCourier.delete(courierId);
         }
@@ -43,7 +44,7 @@ public class CreatingCourierTest {
                 .statusCode(201)
                 .body("ok", equalTo(true));
 
-        courierId = creatingCourier.getCourierId(courier);
+
     }
 
     // 2. Нельзя создать двух одинаковых курьеров
@@ -51,7 +52,7 @@ public class CreatingCourierTest {
     @DisplayName("Нельзя создать двух одинаковых курьеров")
     public void cannotCreateTwoIdenticalCouriers() {
         creatingCourier.create(courier).then().statusCode(201);
-        courierId = creatingCourier.getCourierId(courier);
+
 
         creatingCourier.create(courier).then()
                 .statusCode(409)
@@ -66,7 +67,7 @@ public class CreatingCourierTest {
                 .statusCode(201)
                 .body("ok", equalTo(true));
 
-        courierId = creatingCourier.getCourierId(courier);
+
     }
 
     // 4. Правильный код ответа
@@ -74,7 +75,7 @@ public class CreatingCourierTest {
     @DisplayName("Успешный запрос возвращает код 201")
     public void successfulRequestReturns201() {
         creatingCourier.create(courier).then().statusCode(201);
-        courierId = creatingCourier.getCourierId(courier);
+
     }
 
     // 5. ok: true
@@ -85,7 +86,7 @@ public class CreatingCourierTest {
                 .statusCode(201)
                 .body("ok", equalTo(true));
 
-        courierId = creatingCourier.getCourierId(courier);
+
     }
 
     // 6a. Нет логина
@@ -115,7 +116,7 @@ public class CreatingCourierTest {
     @DisplayName("Если логин уже занят — возвращается ошибка 409")
     public void errorWhenLoginAlreadyExists() {
         creatingCourier.create(courier).then().statusCode(201);
-        courierId = creatingCourier.getCourierId(courier);
+
 
         Courier duplicate = new Courier(courier.getLogin(), "other", "Other");
         creatingCourier.create(duplicate).then()

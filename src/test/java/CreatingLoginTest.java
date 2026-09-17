@@ -1,10 +1,10 @@
-import all_models.Courier;
-import creating_all.CreatingCourier;
+import all.models.Courier;
+import creating.all.CreatingCourier;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import all_models.Url;
+import all.models.Url;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,6 +33,7 @@ public class CreatingLoginTest {
         creatingCourier.create(courier).then().statusCode(201);
         courierId = creatingCourier.getCourierId(courier);
     }
+
 
     @After
     @Step("Очистка: удалить созданного курьера")

@@ -1,16 +1,16 @@
-package all_models;
+package all.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
 
-public class OrderList {
-    private List<Order> orders;
+public class Login {
+    private String login;
+    private String password;
 
 }

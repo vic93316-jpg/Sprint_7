@@ -1,4 +1,4 @@
-package all_models;
+package all.models;
 
 
 import lombok.AllArgsConstructor;
@@ -10,6 +10,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Order {
 
     private String firstName;

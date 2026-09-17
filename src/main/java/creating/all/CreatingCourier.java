@@ -1,5 +1,5 @@
-package creating_all;
-import all_models.Courier;
+package creating.all;
+import all.models.Courier;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
@@ -8,6 +8,7 @@ import static io.restassured.RestAssured.given;
 public class CreatingCourier {
     private static final String COURIER_PATH = "/api/v1/courier";
     private static final String LOGIN_PATH = "/api/v1/courier/login";
+
 
     // Создание курьера — принимает объект, возвращает Response
     @Step("Создать курьера с логином {courier.login}")

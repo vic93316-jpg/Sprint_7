@@ -1,12 +1,13 @@
-package creating_all;
+package creating.all;
 
-import all_models.Order;
-import all_models.Url;
+import all.models.Order;
+import all.models.Url;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
-import static all_models.Url.ORDER_PATH;
+import static all.models.Url.ORDER_PATH;
 import static io.restassured.RestAssured.given;
+
 
 public class CreatingOrder {
 
